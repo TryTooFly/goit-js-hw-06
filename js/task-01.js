@@ -1,10 +1,13 @@
-const totalCategories = document.querySelectorAll(".item");
-console.log(`В списку ${totalCategories.length} категориії:`);
+const listCountRef = document.querySelector("#categories");
+console.log(`Number of categories: ${listCountRef.children.length}`);
 
-const categoriesArray = [...totalCategories]
-  .map(
-    (categories) => `Категорія: ${categories.children[0].textContent}
-Кількість елементів: ${categories.children[1].children.length}`
-  )
-  .join("\n");
-console.log(categoriesArray);
+const itemsRef = listCountRef.querySelectorAll("li.item");
+
+itemsRef.forEach((li) => {
+  console.log(
+    `Category: ${li.querySelector("h2").firstChild.textContent}\nElements: ${
+      li.querySelectorAll("li").length
+    }`
+  );
+});
+sole.log(categoriesArray);
