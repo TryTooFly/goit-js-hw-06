@@ -13,8 +13,16 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-const ulEl = document.querySelector("#ingredients");
+const listRef = document.querySelector("#ingredients");
 
-const list = ingredients.reduce((str, item) => str + `<li>${item}</li>`, "");
+const arr = [];
 
-ulEl.innerHTML = list;
+ingredients.map((ingredient) => {
+  let item = document.createElement("li");
+  item.textContent = ingredient;
+  item.classList.add("item");
+  arr.push(item);
+});
+
+listRef.append(...arr);
+console.log(listRef);
